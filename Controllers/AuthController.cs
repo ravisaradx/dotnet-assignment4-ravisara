@@ -15,14 +15,14 @@ namespace WebApplication2.Controllers
             _jwt = jwt;
         }
 
-        [HttpGet("User")]
+        [HttpPost("User")]
         public IActionResult GenerateUserToken()
         {
             var token = _jwt.GenerateToken("user");
             return Ok(new { token });
         }
 
-        [HttpGet("Admin")]
+        [HttpPost("Admin")]
         public IActionResult GenerateAdminToken()
         {
             var token = _jwt.GenerateToken("admin");
